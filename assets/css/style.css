@@ -1,0 +1,235 @@
+.container-fluid {
+border: 1px;
+margin: 1px;
+}
+ input:required:invalid, input:focus:invalid {
+    background-image: url( ../images/invalid.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+    input:required:valid {
+    background-image: url( http://localhost/servicever2/assets/images/valid.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+   textarea:required:invalid, textarea:focus:invalid {
+    background-image: url( http://localhost/servicever2/assets/images/invalid.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+    textarea:required:valid {
+    background-image: url( http://localhost/servicever2/assets/images/valid.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+     radio:required:invalid, radio:focus:invalid {
+    background-image: url( http://localhost/servicever2/assets/images/invalid.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+    radio:required:valid {
+    background-image: url( http://localhost/servicever2/assets/images/valid.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+#inregistrareuser{
+background-color: rgba(228,228,228,1);
+border: 1px solid black;
+}
+#searchbutton {
+color: black;
+font-size: 16px;
+margin-top: 19%;
+}
+#searchbox {
+font-size: 16px;
+margin-top: 3.5%;
+}
+#leftfirst {
+float: left;
+width: 400px;
+}
+#leftmiddle {
+float: left;
+width: 400px;
+}
+#leftlast {
+float: left;
+width: 400px;
+}
+#save {
+width: 60px;
+height: 30px;
+margin-left: 46%;
+}
+#login{
+float: left;
+height: 34px;
+}
+#loginform {
+width: 360px;
+margin-left: 34%;
+}
+#register{
+margin-left: 18%;
+}
+#registerform {
+width: 292px;
+margin-left: 30%;
+}
+#save_photo1 {
+width: 60px;
+height: 30px;
+margin-left: 46%;
+}
+#save_pvin {
+width: 60px;
+height: 30px;
+margin-left: 46%;
+}
+#fileuploadbtn {
+width: 300px;
+height: 20px;
+margin-left: 40%;
+}
+#table, td, th {
+	padding: 3px;
+	table-layout: fixed;
+    border: 1px solid black;
+}
+#table th {
+	font-size: 12px;
+	width: 72px;
+    text-align: center;
+	background-color: black;
+	color: white;
+	border-color: white;
+}
+#table td {
+font-size: 12px;
+word-wrap: break-word;
+height: 100px;
+text-align: center;
+}
+#footer {
+border: 1px;
+padding: 1px;
+margin-left: 40%;
+margin-right: auto;
+}
+#altexlogo {
+border: 1px;
+padding: 1px;
+float: left;
+}
+#mediagalaxylogo {
+border: 1px;
+padding: 1px;
+float: right;
+}
+#update {
+margin-left: 46%;
+}
+#altex_button {
+margin-left: auto;
+margin-right: auto;
+}
+#print_button {
+margin-left: 35%;
+margin-right: auto;
+}
+#title {
+text-align: center;
+border: 1px;
+font-size: 15px;
+font-weight: bold;
+}
+#title-small {
+text-align: center;
+border: 1px;
+font-size: 10px;
+font-weight: bold;
+}
+#clientdata {
+border: 1px solid black;
+padding: 20px;
+margin: 1px;
+}
+#regdate {
+float: left;
+font-size: 10px;
+font-weight: bold;
+}
+#regnumber {
+text-align: center;
+font-size: 10px;
+font-weight: bold;
+}
+#idtitle{
+text-align: left;
+font-size: 12px;
+font-weight: bold;
+}
+#data {
+font-size: 10px;
+}
+#product {
+height: 100px;
+border: 1px;
+padding: 10px;
+margin: 1px;
+}
+#productstate {
+float: right;
+border: 1px;
+}
+#productstate1 {
+padding: 4px;
+width: 180px;
+height: 100px;
+float: right;
+border: 1px solid black;
+}
+#container {
+float: left;
+width: 500px;
+}
+#aditionaldata {
+border: 1px;
+padding: 20px;
+margin: 1px;
+}
+#aditionaldata1{
+border: 1px solid black;
+padding: 20px;
+margin: 1px;
+}
+/* navbar settings*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: black;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: black; /*BACKGROUND color for active*/
+background-color: ;
+}
+  .navbar-default {
+	font-size: 20px;
+	font-weight: bold;
+    background-color:white;
+    border-color:solid black;
+}
+
+.navbar-default .navbar-nav > li > a {
+   color: grey; /*Change active text color here*/
+    }
+#table_view {
+margin-left: 3.5%;
+}
+
+
+     
