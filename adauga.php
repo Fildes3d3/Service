@@ -184,15 +184,15 @@ include_once ("head.php");
 		<h3>Date Aparat Predat:</h3>
 			<div class="form-group">
 				<label for="productname">Denumire Produs:</label>
-					<input type="text" class="form-control focusedInput" id="productname" name="product" placeholder="Denumire Produs"required>
+					<input type="text" class="form-control focusedInput" id="productname" name="product" placeholder="Denumire Produs" required>
 			</div>
 			<div class="form-group">
 				<label for="productbrand">Marca:</label>
-					<input type="text" class="form-control focusedInput" id="productbrand" name="productbrand" placeholder="Marca/Producator"required>
+					<input type="text" class="form-control focusedInput" id="productbrand" name="productbrand" placeholder="Marca/Producator" required>
 			</div>
 			<div class="form-group">
 				<label for="productmodel">Model:</label>
-					<input type="text" class="form-control focusedInput" id="productmodel" name="productmodel" placeholder="Model"required>
+					<input type="text" class="form-control focusedInput" id="productmodel" name="productmodel" placeholder="Model" required>
 			</div>
 			<div class="form-group">
 				<label for="sn">Serie:</label>
@@ -221,7 +221,7 @@ include_once ("head.php");
 	<h3> Accesorii: </h3>
 		<div class="form-group">
 			<label for="accesorii">Accesorii ce insotesc aparatul in service:</label>
-				<textarea type="text" class="form-control focusedInput" rows="3" cols="50" id="accesorii" name="accesorii" placeholder="Accesorii ce Insotesc Aparatul in service"required></textarea>
+				<textarea type="text" class="form-control focusedInput" rows="3" cols="50" id="accesorii" name="accesorii" placeholder="Accesorii ce Insotesc Aparatul in service" required></textarea>
 		</div>
 	</div>
 	<div class="container-fluid">

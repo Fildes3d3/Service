@@ -14,7 +14,7 @@ $results = array ();
 				$row ['type'] = $ext;
 				$results []= $row;
 				
-				if ($ext == 'jpeg' || $ext == 'png' || $ext == 'jpg') {
+				if ($ext == 'jpeg' || $ext == 'png' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'PNG' || $ext == 'JPEG') {
 					$count_img++;
 				}
 													
@@ -77,7 +77,7 @@ include_once ("head.php");
 		<?php 
 		foreach ($results as $row) {
 		$ext = $row['type'];
-			if ($ext == 'jpeg' || $ext == 'png' || $ext == 'jpg') {
+			if ($ext == 'jpeg' || $ext == 'png' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'PNG' || $ext == 'JPEG') {
 					
 					$image= $row['photo1']; echo '<td>
 														<a href="upload/'.$image.'"target="_blank"><img src="upload/'.$image.'" width="180px" height="auto"></a></td>'; }

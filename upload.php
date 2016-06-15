@@ -14,8 +14,11 @@ if (isset ($_POST ['save']))
 	if(($_FILES['file']['type'] == 'image/jpeg')
 	|| ($_FILES['file']['type'] == 'image/png')
 	|| ($_FILES['file']['type'] == 'image/jpg')
+	|| ($_FILES['file']['type'] == 'image/JPEG')
+	|| ($_FILES['file']['type'] == 'image/PNG')
+	|| ($_FILES['file']['type'] == 'image/JPG')
 	|| ($_FILES['file']['type'] == 'application/pdf')
-	&& ($_FILES ['file']['size'] < 4194304))
+	&& ($_FILES ['file']['size'] < 14602642))
 	{
 		if($_FILES ['file']['error'] > 0)
 		{

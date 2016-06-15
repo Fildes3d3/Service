@@ -25,7 +25,7 @@ if($count == 1){
 }
 }
 else {
-	echo '<script language="javascript">window.location.href="index.html.twig";alert("Utilizator/Parola Eronata!!!");</script>';
+	echo '<script language="javascript">window.location.href="index.php";alert("Utilizator/Parola Eronata!!!");</script>';
 }
 
 ob_end_flush();

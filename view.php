@@ -5,7 +5,7 @@ if (!$_SESSION['logon']){
 	die();
 }
 include_once ("db.php");   
-include_once ("mailalert.php"); 
+//*include_once ("mailalert.php"); 
 ?>
 <?php
 include_once ("head.php");
