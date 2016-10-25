@@ -31,7 +31,7 @@ if (isset ($_POST ['save']))
 		else if (move_uploaded_file ($_FILES['file']['tmp_name'], 'upload/'. $_FILES['file']['name']))
 		{
 			$part = $_FILES['file']['name'];
-			$sql = mysqli_query($conn, "INSERT INTO tblfiles (photo1, case_id)  VALUES ('$part', '$case_id')");
+			$sql = mysqli_query($conn, "INSERT INTO tblfiles (photo, case_id)  VALUES ('$part', '$case_id')");
 			if ($sql)
 			{
 				echo '<script language="javascript">alert("Fisier Incarcat cu Succes!!!");</script>';

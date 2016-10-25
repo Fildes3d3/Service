@@ -10,15 +10,14 @@ $sql = mysqli_query ($conn, "SELECT * FROM tblfiles WHERE case_id = '{$case_id}'
 $count_img = $count_pdf = 0;
 $results = array ();	
 			while ($row = mysqli_fetch_assoc ($sql))  { 
-				$ext = pathinfo($row['photo1'], PATHINFO_EXTENSION);
+				$ext = pathinfo($row['photo'],  PATHINFO_EXTENSION);
 				$row ['type'] = $ext;
-				$results []= $row;
-				
+				$results []= $row; 
 				if ($ext == 'jpeg' || $ext == 'png' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'PNG' || $ext == 'JPEG') {
 					$count_img++;
 				}
 													
-				else if ($ext == 'pdf') {
+				else if ($ext == 'pdf' || $ext == 'PDF') {
 					$count_pdf++;
 				}
 			} 
@@ -77,18 +76,22 @@ include_once ("head.php");
 		<?php 
 		foreach ($results as $row) {
 		$ext = $row['type'];
-			if ($ext == 'jpeg' || $ext == 'png' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'PNG' || $ext == 'JPEG') {
+			if ($ext === 'jpeg' || $ext === 'png' || $ext === 'jpg' || $ext ==='JPEG' || $ext === 'PNG' || $ext === 'JPEG' && $count_img > 0 ) {
 					
-					$image= $row['photo1']; echo '<td>
-														<a href="upload/'.$image.'"target="_blank"><img src="upload/'.$image.'" width="180px" height="auto"></a></td>'; }
-													
-				else if ($ext == 'pdf') {
+					$image= $row['photo']; echo '<td>
+													<a href="upload/'.$image.'"target="_blank"><img src="upload/'.$image.'" width="280px" height="auto"></a>
+								</td>'; } 
+				else if ($ext === 'pdf' || $ext === 'PDF' && $count_pdf > 0 ) {
 					
-					$object= $row['photo1']; echo '<td><object  width="300px" height="398" type="application/pdf" data="upload/'.$object.'?#zoom=35&scrollbar=0&toolbar=0&navpanes=0" id="pdf_content"></td>'; } 
-
-		}
+					$object= $row['photo']; echo '<td>
+													<object  width="400px" height="398" type="application/pdf" data="upload/'.$object.'	?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" id="pdf_content"><p>Insert your error message here, 	if the PDF cannot be displayed.</p>
+														</object>
+													</td>'; }
+													echo $object;
+									}
 		?>
 		</tr>
+	</tbody>	
 </table>
 </div>
 </body>

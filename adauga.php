@@ -17,7 +17,9 @@ if (isset ($_POST ['save']))
 		$_POST [$key] = addslashes (strip_tags(trim ($value)));
 		$_POST [$key] = stripslashes (strip_tags(trim ($value)));
 		}
-	$sql= mysqli_query ($conn, "INSERT INTO tblservice 
+
+
+	$sql = mysqli_query ($conn, "INSERT INTO tblservice 
 						(receivedate, clientname, clientstreet, clientbl, clientsc, clientap, clientet, clientjud, clientloc, clientphone, clientemail, store, av, functia, 
 						storephone, product, productbrand, productmodel, sn, aspect, accesorii, cgnumber, cgdate, invoicenumber, invoicedate, defect, servunit, servphone, 
 						servadress, servcontact)
@@ -51,7 +53,7 @@ if (isset ($_POST ['save']))
 							'{$_POST ['servphone']}',
 							'{$_POST ['servadress']}',
 							'{$_POST ['servcontact']}'
-							)");
+							)") or die(mysqli_error($conn));
 	if ($sql) {
 		echo "<script>alert('Inregistrare Salvata cu Succes!!!')</script>";
 		header ('location:view.php');
@@ -110,22 +112,22 @@ include_once ("head.php");
 		<h3>Adauga Fisa</h3>
 		<div class="form-group">
 				<label for="receivedate">Data Preluare:</label>
-					<input type="date" class="form-control focusedInput" id="receivedate" name="receivedate" placeholder="Data Preluare" required>
+					<input type="date" class="form-control focusedInput" id="receivedate" name="receivedate" placeholder="Data Preluare" >
 		</div>
 	</div>
 	<div class="container-fluid">
 		<h3> Date Client </h3>
 			<div class="form-group">
 				<label for="clientname">Nume Client:</label>
-					<input type="text" class="form-control focusedInput" id="clientname" name="clientname" placeholder="Nume Client" required>
+					<input type="text" class="form-control focusedInput" id="clientname" name="clientname" placeholder="Nume Client" >
 			</div>
 			<div class="form-group">
 				<label for="clientstreet" >Strada:</label>
-					<input type="text" class="form-control focusedInput" id="cleintstreet" name="clientstreet" placeholder="Strada" required>
+					<input type="text" class="form-control focusedInput" id="cleintstreet" name="clientstreet" placeholder="Strada" >
 			</div>
 			<div class="form-group">
 				<label for="clientbl">Bloc:</label>
-					<input type="text" class="form-control focusedInput" id="clientbl" name="clientbl" placeholder="Bloc" required>
+					<input type="text" class="form-control focusedInput" id="clientbl" name="clientbl" placeholder="Bloc" >
 			</div>
 			<p></p>
 			<div class="form-group">
@@ -134,7 +136,7 @@ include_once ("head.php");
 			</div>
 			<div class="form-group">
 				<label for="clientap">Apartament:</label>
-					<input type="text" class="form-control focusedInput"  id="clientap" name="clientap" placeholder="Apartament" required>
+					<input type="text" class="form-control focusedInput"  id="clientap" name="clientap" placeholder="Apartament" >
 			</div>
 			<div class="form-group">
 				<label for="clientet">Etaj:</label>
@@ -142,20 +144,20 @@ include_once ("head.php");
 			</div>
 			<div class="form-group">
 				<label for="clientjud">Judet/Sector:</label>
-					<input type="text" class="form-control focusedInput" id="clientjud" name="clientjud" placeholder="Judet/Sector" required>
+					<input type="text" class="form-control focusedInput" id="clientjud" name="clientjud" placeholder="Judet/Sector" >
 			</div>
 			<p></p>
 			<div class="form-group">
 				<label for="clientloc">Localitate:</label>
-					<input type="text" class="form-control focusedInput" id="clientloc" name="clientloc" placeholder="Localitate" required>
+					<input type="text" class="form-control focusedInput" id="clientloc" name="clientloc" placeholder="Localitate" >
 			</div>
 			<div class="form-group">
 				<label for="clientphone">Telefon:</label>
-					<input type="text" class="form-control focusedInput" id="clientphone" name="clientphone" placeholder="Numar telefon" pattern="[0-9]{10}" title="Introduceti numar telefon de forma:07XXXXXXXX sau 02XXXXXXXX" required>
+					<input type="text" class="form-control focusedInput" id="clientphone" name="clientphone" placeholder="Numar telefon" pattern="[0-9]{10}" title="Introduceti numar telefon de forma:07XXXXXXXX sau 02XXXXXXXX" >
 			</div>
 			<div class="form-group">
 				<label for="clientemail">eMail:</label>
-					<input type="email" class="form-control focusedInput" id="clientemail" name="clientemail" placeholder="Adresa eMail" title="Introduceti adresa de email de forma:user@example.XX" required>
+					<input type="email" class="form-control focusedInput" id="clientemail" name="clientemail" placeholder="Adresa eMail" title="Introduceti adresa de email de forma:user@example.XX" >
 			</div>
 	</div>
 </div>
@@ -164,51 +166,51 @@ include_once ("head.php");
 		<h3> Date Magazin Altex </h3>
 			<div class="form-group">
 				<label for="store">Denumirea Unitatii:</label>
-					<input type="text" class="form-control focusedInput" id="store" name="store" value="Media Galaxy Cluj Polus" placeholder="Media Galaxy Cluj Polus" required>
+					<input type="text" class="form-control focusedInput" id="store" name="store" value="Media Galaxy Cluj Polus" placeholder="Media Galaxy Cluj Polus" >
 			</div>
 			<div class="form-group">
 				<label for="av">Nume reprezentant magazin:</label>
-					<input type="text" class="form-control focusedInput" id="av" name="av" placeholder="Reprezentant magazin" required>
+					<input type="text" class="form-control focusedInput" id="av" name="av" placeholder="Reprezentant magazin" >
 			</div>
 			<div class="form-group">
 				<label for="functia">Functia:</label>
-					<input type="text" class="form-control focusedInput" id="functia" name="functia" placeholder="Functia" required>
+					<input type="text" class="form-control focusedInput" id="functia" name="functia" placeholder="Functia" >
 			</div>
 			<p></p>
 			<div class="form-group">
 				<label for="storephone">Telefon:</label>
-					<input type="text" class="form-control focusedInput" id="storephone" name="storephone" value="0264275118" placeholder="0264 275 118" pattern="[0-9]{10}" title="Introduceti numar telefon de forma:07XXXXXXXX sau 02XXXXXXXX" required>
+					<input type="text" class="form-control focusedInput" id="storephone" name="storephone" value="0264275118" placeholder="0264 275 118" pattern="[0-9]{10}" title="Introduceti numar telefon de forma:07XXXXXXXX sau 02XXXXXXXX" >
 			</div>
 	</div>
 	<div class="container-fluid">
 		<h3>Date Aparat Predat:</h3>
 			<div class="form-group">
 				<label for="productname">Denumire Produs:</label>
-					<input type="text" class="form-control focusedInput" id="productname" name="product" placeholder="Denumire Produs" required>
+					<input type="text" class="form-control focusedInput" id="productname" name="product" placeholder="Denumire Produs" >
 			</div>
 			<div class="form-group">
 				<label for="productbrand">Marca:</label>
-					<input type="text" class="form-control focusedInput" id="productbrand" name="productbrand" placeholder="Marca/Producator" required>
+					<input type="text" class="form-control focusedInput" id="productbrand" name="productbrand" placeholder="Marca/Producator" >
 			</div>
 			<div class="form-group">
 				<label for="productmodel">Model:</label>
-					<input type="text" class="form-control focusedInput" id="productmodel" name="productmodel" placeholder="Model" required>
+					<input type="text" class="form-control focusedInput" id="productmodel" name="productmodel" placeholder="Model" >
 			</div>
 			<div class="form-group">
 				<label for="sn">Serie:</label>
-					<input type="text" class="form-control focusedInput" id="sn" name="sn" placeholder="Serial Number" required>
+					<input type="text" class="form-control focusedInput" id="sn" name="sn" placeholder="Serial Number" >
 			</div>
 	</div>
 	<div class="container-fluid">
 		<h3> Aspect: </h3>
 			<div class="form-group">
 				<label for="aspect">Aspect Estetic:</label>
-					<input type="text" class="form-control focusedInput" id="aspect" name="aspect" placeholder="Aspect Estetic" required>
+					<input type="text" class="form-control focusedInput" id="aspect" name="aspect" placeholder="Aspect Estetic" >
 			</div>
 			<div class="form-group">
 				<label for="radio">Ambalaj Corespunzator:</label>
 					<div class="checkbox">
-						<label> <input type="radio" id="radio" name="optradio" required>Da</label>
+						<label> <input type="radio" id="radio" name="optradio" >Da</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="radio" name="optradio">Nu</label>
@@ -221,7 +223,7 @@ include_once ("head.php");
 	<h3> Accesorii: </h3>
 		<div class="form-group">
 			<label for="accesorii">Accesorii ce insotesc aparatul in service:</label>
-				<textarea type="text" class="form-control focusedInput" rows="3" cols="50" id="accesorii" name="accesorii" placeholder="Accesorii ce Insotesc Aparatul in service" required></textarea>
+				<textarea type="text" class="form-control focusedInput" rows="3" cols="50" id="accesorii" name="accesorii" placeholder="Accesorii ce Insotesc Aparatul in service" ></textarea>
 		</div>
 	</div>
 	<div class="container-fluid">
@@ -241,18 +243,18 @@ include_once ("head.php");
 		<h3> Dovada Cumpararii (Factura fiscala/Bon Fiscal):</h3>	
 			<div class="form-group">
 				<label for="invoicenumber">Numar:</label>
-					<input type="text" class="form-control focusedInput"  id="invoicenumber" name="invoicenumber" placeholder="Numar Factura/Bon" required>
+					<input type="text" class="form-control focusedInput"  id="invoicenumber" name="invoicenumber" placeholder="Numar Factura/Bon" >
 			</div>
 			<div class="form-group">
 				<label for="invoicedate">Data:</label>
-					<input type="date" class="form-control focusedInput" id="invoicedate" name="invoicedate" placeholder="Data Factura/Bon" required>
+					<input type="date" class="form-control focusedInput" id="invoicedate" name="invoicedate" placeholder="Data Factura/Bon" >
 			</div>
 	</div>
 	<div class="container-fluid">
 		<h3> Defect Reclamat:</h3>
 			<div class="form-group">
 				<label for="defect">Descrierea Defectului:</label>
-					<textarea type="text" class="form-control focusedInput" id="defect" name="defect" rows="3" cols="50" placeholder="Defectul Reclamat de Client" required></textarea>
+					<textarea type="text" class="form-control focusedInput" id="defect" name="defect" rows="3" cols="50" placeholder="Defectul Reclamat de Client" ></textarea>
 			</div>
 	</div>
 	<div class="container-fluid">
