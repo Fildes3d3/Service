@@ -74,21 +74,25 @@ include_once ("head.php");
 	<tbody>
 		<tr>
 		<?php 
+
+		$images = "";
+		$docs = "";
+
 		foreach ($results as $row) {
 		$ext = $row['type'];
 			if ($ext === 'jpeg' || $ext === 'png' || $ext === 'jpg' || $ext ==='JPEG' || $ext === 'PNG' || $ext === 'JPEG' && $count_img > 0 ) {
 					
-					$image= $row['photo']; echo '<td>
+					$image= $row['photo']; $images.= '<td>
 													<a href="upload/'.$image.'"target="_blank"><img src="upload/'.$image.'" width="280px" height="auto"></a>
 								</td>'; } 
 				else if ($ext === 'pdf' || $ext === 'PDF' && $count_pdf > 0 ) {
 					
-					$object= $row['photo']; echo '<td>
+					$object= $row['photo']; $docs.= '<td>
 													<object  width="400px" height="398" type="application/pdf" data="upload/'.$object.'	?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" id="pdf_content"><p>Insert your error message here, 	if the PDF cannot be displayed.</p>
 														</object>
 													</td>'; }
-													echo $object;
 									}
+									echo $images.$docs;
 		?>
 		</tr>
 	</tbody>	
